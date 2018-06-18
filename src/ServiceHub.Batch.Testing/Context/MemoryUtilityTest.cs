@@ -9,10 +9,10 @@ namespace ServiceHub.Batch.Testing
     public class MemoryUtilityTest : IAsyncLifetime
     {
         /// <value>Use storage as an IoC container</summary>
-        Storage storage;
-        Batch.Library.Models.Batch testBatch1;
-        Batch.Library.Models.Batch testBatch2;
-        Batch.Library.Models.Batch testBatch3;
+        readonly Storage storage;
+        readonly Batch.Library.Models.Batch testBatch1;
+        readonly Batch.Library.Models.Batch testBatch2;
+        readonly Batch.Library.Models.Batch testBatch3;
 
         public async Task InitializeAsync()
         {
@@ -184,8 +184,7 @@ namespace ServiceHub.Batch.Testing
         [InlineData("Dynamics",1)]
         async Task GetBatchesBySkillTest(string skill, int expected)
         {
-            List<Batch.Library.Models.Batch> collection = new List<Batch.Library.Models.Batch>();
-            collection = await storage.GetBatchesBySkillAsync(skill);
+            List<Batch.Library.Models.Batch> collection = await storage.GetBatchesBySkillAsync(skill);
             Assert.Equal(expected, collection.Count);
         }
         /// <summary>
@@ -201,8 +200,7 @@ namespace ServiceHub.Batch.Testing
         [InlineData("VA", 2)]
         async Task GetBatchesByLocationTest(string state, int expected)
         {
-            List<Batch.Library.Models.Batch> collection = new List<Batch.Library.Models.Batch>();
-            collection = await storage.GetBatchesByLocationAsync(state);
+            List<Batch.Library.Models.Batch> collection = await storage.GetBatchesByLocationAsync(state);
             Assert.Equal(expected, collection.Count);
         }
     }

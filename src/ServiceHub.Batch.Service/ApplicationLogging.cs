@@ -2,7 +2,7 @@
 
 namespace ServiceHub.Batch.Service
 {
-    public class ApplicationLogging
+    public static class ApplicationLogging
     {
         private static ILoggerFactory _Factory = null;
         private static string categoryName;

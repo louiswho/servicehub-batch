@@ -22,10 +22,6 @@ namespace ServiceHub.Batch.Context.Utilities
         /// <returns></returns>
         public async Task AddBatchAsync(Library.Models.Batch batch)
         {
-            if (batch == null)
-            {
-                throw new ArgumentNullException(nameof(batch));
-            }
             await _batches.InsertOneAsync(ModelMapper.ToContextBatchModel(batch));
         }
 
@@ -36,10 +32,6 @@ namespace ServiceHub.Batch.Context.Utilities
         /// <returns></returns>
         public async Task DeleteBatchAsync(Guid id)
         {
-            if (id == null)
-            {
-                throw new ArgumentNullException(nameof(id));
-            }
             var filter = Builders<Models.Batch>.Filter.Eq(x => x.BatchId, id);
             await _batches.DeleteOneAsync(filter);
         }
@@ -50,11 +42,6 @@ namespace ServiceHub.Batch.Context.Utilities
         /// <returns></returns>
         public async Task<List<Library.Models.Batch>> GetAllBatchesAsync()
         {
-            if (_batches == null)
-            {
-                throw new ArgumentNullException(nameof(_batches));
-            }
-
             return ModelMapper.ToLibraryList(await _batches.AsQueryable().ToListAsync());
         }
 
@@ -65,10 +52,6 @@ namespace ServiceHub.Batch.Context.Utilities
         /// <returns></returns>
         public async Task UpdateBatchAsync(Library.Models.Batch batch)
         {
-            if (batch == null)
-            {
-                throw new ArgumentNullException(nameof(batch));
-            }
             var filter = Builders<Models.Batch>.Filter.Eq(x => x.BatchId, batch.BatchId);
             var update = Builders<Models.Batch>.Update.Set(x => x.State, batch.State);
             await _batches.UpdateOneAsync(filter, update);
