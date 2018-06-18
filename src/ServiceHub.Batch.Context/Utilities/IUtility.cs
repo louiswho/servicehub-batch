@@ -16,32 +16,32 @@ namespace ServiceHub.Batch.Context.Utilities
         /// </summary>
         /// <param name="skill">Batch skill</param>
         /// <returns>List of batches with the same skill</returns>
-        List<Library.Models.Batch> GetBatchesBySkill(string skill);
+        Task<List<Library.Models.Batch>> GetBatchesBySkillAsync(string skill);
         /// <summary>
         /// Gets a list of all of the batches that match the specified city and state
         /// </summary>
         /// <param name="state">State</param>
         /// <returns></returns>
-        List<Library.Models.Batch> GetBatchesByLocation(string state);
+        Task<List<Library.Models.Batch>> GetBatchesByLocationAsync(string state);
         /// <summary>
         /// Gets all the batches from the list
         /// </summary>
         /// <returns>A list of all of the batches</returns>
-        List<Library.Models.Batch> GetAllBatches();
+        Task<List<Library.Models.Batch>> GetAllBatchesAsync();
         /// <summary>
         /// Adds a batch to the batch list
         /// </summary>
         /// <param name="batch">Batch object</param>
-        void AddBatch(Library.Models.Batch batch);
+        Task AddBatchAsync(Library.Models.Batch batch);
         /// <summary>
         /// Modifies the specified batch in the list with new information
         /// </summary>
         /// <param name="batch">Batch object</param>
-        void UpdateBatch(Library.Models.Batch batch);
+        Task UpdateBatchAsync(Library.Models.Batch batch);
         /// <summary>
         /// Deletes a batch from the list
         /// </summary>
         /// <param name="id">Batch ID</param>
-        void DeleteBatch(Guid id);
+        Task DeleteBatchAsync(Guid id);
     }
 }

@@ -1,6 +1,10 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <ItemGroup>
+    <PackageReference Include="MongoDB.Driver" Version="2.7.0-beta0001" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\ServiceHub.Batch.Library\ServiceHub.Batch.Library.csproj" />
   </ItemGroup>
 
