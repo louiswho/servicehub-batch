@@ -5,7 +5,7 @@ networks:
 
 services:
   web:
-    image: revaturecloud/servicehub-batch:latest
+    image: revaturecloud/servicehub-batch:dev
     deploy:
       replicas: 1
       resources:
