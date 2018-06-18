@@ -15,9 +15,8 @@ namespace ServiceHub.Batch.Library
             List<Models.Batch> libList = new List<Models.Batch>();
             foreach (var batch in ctxList)
             {
-                Models.Batch libBatchModel = new Models.Batch();
-                libBatchModel = ToLibraryBatchModel(batch);
-                if (libBatchModel == null) { return null; }
+                Models.Batch libBatchModel = ToLibraryBatchModel(batch);
+                if (libBatchModel == null) { return new List<Models.Batch>(); }
                 libList.Add(libBatchModel);
             }
 

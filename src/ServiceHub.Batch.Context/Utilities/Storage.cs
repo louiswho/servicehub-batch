@@ -15,7 +15,7 @@ namespace ServiceHub.Batch.Context.Utilities
         ///     List<Models.Batch> batchList = storage.GetAllBatches();
         /// </remarks>
         /// 
-        private IUtility utility;
+        private readonly IUtility utility;
 
         /// <value> Inject IUtility class </value>
         public Storage(IUtility utility)

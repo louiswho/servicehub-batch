@@ -16,12 +16,10 @@ namespace ServiceHub.Batch.Testing.Service
         /// <summary>
         /// Initialize dummy data Address and Batch models
         /// </summary>
-        Batch.Library.Models.Batch testBatch1;
-        Batch.Library.Models.Batch testBatch2;
-        Batch.Library.Models.Batch testBatch3;
-
-        static ILoggerFactory loggerFactory = new LoggerFactory();
-        Batch.Service.Controllers.BatchController controller = new Batch.Service.Controllers.BatchController(new MemoryUtility(), loggerFactory);
+        readonly Batch.Library.Models.Batch testBatch1;
+        readonly Batch.Library.Models.Batch testBatch2;
+        readonly Batch.Library.Models.Batch testBatch3;
+        readonly Batch.Service.Controllers.BatchController controller;
 
         public async Task InitializeAsync()
         {
@@ -36,12 +34,14 @@ namespace ServiceHub.Batch.Testing.Service
             await controller.storage.DeleteBatchAsync(testBatch2.BatchId);
             await controller.storage.DeleteBatchAsync(testBatch3.BatchId);
         }
+
         /// <summary>
         /// Instantiate dummy Address and Batch models
         /// </summary>
         /// 
         public BatchControllerTest()
         {
+            controller = new Batch.Service.Controllers.BatchController(new MemoryUtility(), new LoggerFactory());
             testBatch1 = new Batch.Library.Models.Batch()
             {
 
@@ -92,14 +92,11 @@ namespace ServiceHub.Batch.Testing.Service
         [Fact]
         async Task GetAllTest()
         {
-            List<Batch.Library.Models.Batch> newBatch = new List<Batch.Library.Models.Batch>();
-            newBatch = await controller.storage.GetAllBatchesAsync();
-
-            List<Batch.Library.Models.Batch> newBatch2 = new List<Batch.Library.Models.Batch>();
+            List<Batch.Library.Models.Batch> newBatch = await controller.storage.GetAllBatchesAsync();
             var actionResultTask = await controller.Get();
             var res = actionResultTask as OkObjectResult;
             var result = res.Value;
-            newBatch2 = (List<Batch.Library.Models.Batch>)result;
+            List<Batch.Library.Models.Batch> newBatch2 = (List<Batch.Library.Models.Batch>)result;
             Assert.Equal(newBatch.Count, newBatch2.Count);
 
         }
@@ -120,11 +117,10 @@ namespace ServiceHub.Batch.Testing.Service
         [MemberData(nameof(SkillTestCases))]
         async Task GetBySkillTest(string skill, int num)
         {
-            List<Batch.Library.Models.Batch> testC = new List<Batch.Library.Models.Batch>();
             var batchSkill = await controller.GetBySkill(skill);
             var res = batchSkill as OkObjectResult;
             var result = res.Value;
-            testC = (List<Batch.Library.Models.Batch>)result;
+            List<Batch.Library.Models.Batch> testC = (List<Batch.Library.Models.Batch>)result;
 
             Assert.Equal(num, testC.FindAll(x => x.BatchSkill == skill).Count);
         }
@@ -135,12 +131,10 @@ namespace ServiceHub.Batch.Testing.Service
         [Fact]
         async Task GetByLocationTest()
         {
-
-            List<Batch.Library.Models.Batch> testL = new List<Batch.Library.Models.Batch>();
             var batchLocation = await controller.GetByLocation("AK");
             var res = batchLocation as OkObjectResult;
             var result = res.Value;
-            testL = (List<Batch.Library.Models.Batch>)result;
+            List<Batch.Library.Models.Batch> testL = (List<Batch.Library.Models.Batch>)result;
 
             Assert.Equal(2, testL.Count);
         }

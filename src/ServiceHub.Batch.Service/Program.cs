@@ -13,7 +13,7 @@ namespace ServiceHub.Batch.Service
             using (var scope = host.Services.CreateScope())
             {
                 var services = scope.ServiceProvider;
-                SeedData.Initialize(services);
+                SeedData.Initialize(services).Wait();
             }
             host.Run();
         }
