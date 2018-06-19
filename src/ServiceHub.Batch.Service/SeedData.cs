@@ -24,99 +24,132 @@ namespace ServiceHub.Batch.Service
                     {
                         BatchId = Guid.NewGuid(),
                         BatchName = "1804-apr09-net",
-                        BatchOccupancy = 21,
+                        BatchOccupancy = 13,
                         BatchSkill = ".NET",
                         StartDate = new DateTime(2018, 4, 9),
                         EndDate = new DateTime(2018, 6, 22),
                         State = "FL",
                         UserIds = new List<Guid>
                         {
-                            new Guid("a043c475-a8ea-4421-bb6e-ee94289c67e5"),
-                            new Guid("94060e03-7278-4d6a-a5ec-c22ae85cbb8b"),
-                            new Guid("35e333b3-8f04-4093-907c-37e13078200f"),
-                            new Guid("0c807213-8004-4323-a097-a9f023dce0ab"),
-                            new Guid("d84bc0d6-8496-4cf0-bc5e-5f19c6ce01ca"),
-                            new Guid("6d886dcc-3712-43bd-b372-f0d30143bde7"),
-                            new Guid("53b54c1b-2030-489d-840b-38f11ecc6085"),
-                            new Guid("a2c3b01c-fe5d-4b31-9822-39714f831412"),
-                            new Guid("d94d0d9c-40d3-4b65-a852-a21742f5776f"),
-                            new Guid("ff77467f-4d6b-441f-9662-8c2636293908"),
-                            new Guid("e6c47b83-d608-46c1-bb19-9623f331f47d"),
-                            new Guid("c71685b7-dca1-40f2-8f93-022c63a4622c"),
-                            new Guid("37ab32cc-26df-478a-8cfa-cc9d3563a0f2"),
-                            new Guid("8d76e671-814a-4d23-bd3b-8f55dc532a47"),
-                            new Guid("b29dfabd-20c9-4a21-84cb-25dc9463a2b1"),
-                            new Guid("be7e8bce-da50-4a07-961e-0a180e4b9303"),
-                            new Guid("f2ddb323-1ac4-4049-baee-d1b1274e0070"),
-                            new Guid("a6020109-cceb-43c0-abd5-56de213cb8b3"),
-                            new Guid("e49e1fa0-9cde-4a80-a1b5-8b10918cad71"),
-                            new Guid("822c472b-4ded-4a8f-ad8a-ffd7cede1b76"),
-                            new Guid("2c3399ab-29a2-4c9b-98c0-7fb60d1400d9")
+                            new Guid("26aa13da-2d5a-483b-b56c-75e21f22ee42"),
+                            new Guid("fd4f8420-98bc-4bb1-9b4b-32e815ea1435"),
+                            new Guid("9ed57e9d-c2dc-46fd-a807-5d24fead27d5"),
+                            new Guid("3c5ddd41-7f8f-4f62-bd6a-cce52a17c935"),
+                            new Guid("ccb93b16-7457-473d-9b60-ed7cd1a79a70"),
+                            new Guid("8b7991d3-873c-47dc-b13e-9368f3075eb2"),
+                            new Guid("e570d479-7ebb-4fd3-a84e-0ac4737df5e8"),
+                            new Guid("ce670145-931d-489c-90ba-dd4d4955c197"),
+                            new Guid("a35bc0fb-acb7-4bb1-994b-91bd0acec816"),
+                            new Guid("a482586c-4e34-4777-bb39-e955d14b7056"),
+                            new Guid("2445983c-6bfb-4fe1-ab40-2075c00b10e9"),
+                            new Guid("5020bfb2-3b39-4a01-99e4-d911ec5b1774"),
+                            new Guid("4bd42f54-183c-4fd8-845b-17c368527d42")
                         }
                     });
                     await context.AddBatchAsync(new Library.Models.Batch()
                     {
                         BatchId = Guid.NewGuid(),
                         BatchName = "1803-mar26-dynamics",
-                        BatchOccupancy = 22,
-                        BatchSkill = "Dynamics",
+                        BatchOccupancy = 13,
+                        BatchSkill = "DYNAMICS",
                         StartDate = new DateTime(2018, 3, 26),
                         EndDate = new DateTime(2018, 6, 4),
                         State = "VA",
                         UserIds = new List<Guid>
                         {
-                            new Guid("b165e54e-30e3-4f5c-8f94-83e55d8acb3b"),
-                            new Guid("d4b50c4c-06bd-46f7-824c-00329af3366d"),
-                            new Guid("cbf7223e-8996-428e-a221-7b2030cbf2b4"),
-                            new Guid("1fac76fd-7fa3-4417-90fa-23267000ae9a"),
-                            new Guid("c329f3af-c302-4fe6-a73f-7f1f93815c17"),
-                            new Guid("dcc68954-3dde-4b0b-afdc-65c32a27cc77"),
-                            new Guid("724fb5ac-9edc-45a0-b16a-d180f44403b3"),
-                            new Guid("22a3dcf1-a05f-46c7-a1f7-d813c0f8f729"),
-                            new Guid("2ae4b78e-7405-4fe8-b476-3b11fbf9f9c2"),
-                            new Guid("d99e449e-0d7a-4901-908f-9a1244a822e6"),
-                            new Guid("fc55df63-467e-40fc-9165-c6b9b29b2c63"),
-                            new Guid("3095a9bb-63e7-410f-adaa-83ee59b7d4b9"),
-                            new Guid("70925a0c-89fd-4233-a23d-7b5fb80bef42"),
-                            new Guid("d4d20c37-7ea9-41ad-84ba-2a0097200069"),
-                            new Guid("33270a95-7591-444f-b3d0-c37c72473a8e"),
-                            new Guid("2f7ae9f2-f528-4ffd-8738-7b5bd633bdc0"),
-                            new Guid("d1a22a63-0c83-490d-84eb-3ce2107a1965"),
-                            new Guid("10756f25-481e-43ba-b560-581159ee14ce"),
-                            new Guid("5bc164a4-27fd-43ac-9e49-052a5b621b8a"),
-                            new Guid("605a1e5d-49b3-400a-946c-d811a0d29454"),
-                            new Guid("16eed2f4-627e-46a9-ba8d-684886decbfd"),
-                            new Guid("522d473b-2294-4151-9b81-885cbcef8d82")
+                            new Guid("5e6af9dc-775b-48f2-bb6a-d19fd93abddb"),
+                            new Guid("4ace15a2-cba2-4a8b-b7d2-9f31581a6fce"),
+                            new Guid("57674adc-57d4-484a-975a-fd29237dd1e0"),
+                            new Guid("90378852-6aba-4826-8bfc-a5c02162acce"),
+                            new Guid("ee86b5b2-44e7-421a-841e-ae845ca0650f"),
+                            new Guid("6d257113-9410-4689-8867-aabfc4e0bec4"),
+                            new Guid("d9183b0a-85b9-4d83-b1f6-13ec73473424"),
+                            new Guid("a863073b-fba7-44fd-97a3-0bbc5eb57d29"),
+                            new Guid("88648c77-4a03-4daa-a074-ce70de3de19f"),
+                            new Guid("47ecd86a-0141-4afc-badf-4937b888f9c2"),
+                            new Guid("f16c4cdd-bf6a-459c-8cb7-bb637f2f18e8"),
+                            new Guid("49d32e96-dcf3-4487-824e-817282db9e78"),
+                            new Guid("c9fc2cc0-12e4-414c-863a-0afaa52819a6")
                         }
                     });
                     await context.AddBatchAsync(new Library.Models.Batch()
                     {
                         BatchId = Guid.NewGuid(),
                         BatchName = "1703-dec09-java",
-                        BatchOccupancy = 17,
-                        BatchSkill = "Java",
+                        BatchOccupancy = 15,
+                        BatchSkill = "JAVA",
                         StartDate = new DateTime(2017, 12, 9),
                         EndDate = new DateTime(2018, 2, 23),
                         State = "VA",
                         UserIds = new List<Guid>
                         {
-                            new Guid("e33ab8fd-b784-412d-8408-0d7fa5d910be"),
-                            new Guid("fa228d7a-3754-45cd-83b7-79c1e93996a7"),
-                            new Guid("ead96b6c-de0d-4cf8-a112-516915abee8f"),
-                            new Guid("6e35d28f-fd41-4230-a42e-82b3dbcccf04"),
-                            new Guid("af9ea656-ab1b-4d01-94f1-8ad07960136d"),
-                            new Guid("20a69a47-921b-42ff-a88f-83e71b5bdd06"),
-                            new Guid("ce6af605-98bd-4bcc-97c4-9cfcd6781ecf"),
-                            new Guid("2a1a98ea-12a6-4570-9202-e95a3eac6486"),
-                            new Guid("5e371598-043c-4235-8c3b-aaf805cd5430"),
-                            new Guid("788f76ef-09ca-4dfe-a527-408d1483c834"),
-                            new Guid("0550e1a0-9ee8-487d-88b5-80f55744aeb2"),
-                            new Guid("eafc925a-890f-4c94-8423-13178f9382dc"),
-                            new Guid("9bf77209-a1cc-4bc5-be38-43c27ac8168a"),
-                            new Guid("9681a308-e80d-41c4-af6a-b78b5b9c8fb2"),
-                            new Guid("3991c055-25fb-4bfe-a00d-c5d18b381f34"),
-                            new Guid("38954181-fe8c-4c72-be41-2324fd59530d"),
-                            new Guid("67bb921c-b537-4b2c-833c-f219be6e5882")
+                            new Guid("5810f156-35cd-4a62-b1ff-178fe49911a3"),
+                            new Guid("f0262d14-23f8-4ae8-8cef-b49cedd078a1"),
+                            new Guid("a357c17c-046f-43be-bbd2-92b66a3a7a32"),
+                            new Guid("82605602-d7d5-4411-92f1-399b1cf8dd75"),
+                            new Guid("ea943cce-522f-447b-9d8d-61427d1498ee"),
+                            new Guid("ec8a60b1-12a3-4164-8ea2-edbafb90dbfb"),
+                            new Guid("3552bef0-2dda-47b5-a40d-37d252c2d211"),
+                            new Guid("12eb725b-1816-4049-8d01-b18314befe65"),
+                            new Guid("960327df-a3cc-4d12-aff6-85c68b9bf750"),
+                            new Guid("f77f606f-4c0a-4357-807b-f00c1214fdd6"),
+                            new Guid("22a25910-91d5-4405-b559-0ce2b8224452"),
+                            new Guid("35d12491-3f9f-4e65-8c1a-686102ca33a7"),
+                            new Guid("437514f7-2abe-466b-a4e7-d915cddb6a65"),
+                            new Guid("0ae84039-ef61-4f93-91f1-6ddb67dbf7ae"),
+                            new Guid("7369cd0a-26ad-4b6c-aafe-053613625743")
+                        }
+                    });
+                    await context.AddBatchAsync(new Library.Models.Batch()
+                    {
+                        BatchId = Guid.NewGuid(),
+                        BatchName = "1205-mar09-java",
+                        BatchOccupancy = 14,
+                        BatchSkill = "JAVA",
+                        StartDate = new DateTime(2018, 3, 9),
+                        EndDate = new DateTime(2018, 5, 25),
+                        State = "NY",
+                        UserIds = new List<Guid>
+                        {
+                            new Guid("17936ce0-4ce2-45fc-90a9-583a75289dc2"),
+                            new Guid("f6f68e46-20b0-4758-9c6b-10b1e1fba4cb"),
+                            new Guid("48cbb3a0-a9ba-41a3-9a79-c3ad8f1bf3ff"),
+                            new Guid("3386482d-3db4-4a48-b360-e8ead9a908a2"),
+                            new Guid("9ea24f7c-39d8-4a63-98c7-7478eed4e27d"),
+                            new Guid("e8c81569-7bc2-4e2f-bd1f-8e03a253c843"),
+                            new Guid("d86cd606-f0ac-49ba-920d-8016073c567d"),
+                            new Guid("2f8449ec-f6ba-4b5f-aa87-71a5cb79824c"),
+                            new Guid("88dad7b7-a195-4fb0-a0ee-348f5d0c7450"),
+                            new Guid("a6becbee-71cc-4441-8456-b7961e43de7e"),
+                            new Guid("1feffeaa-3e80-471d-8152-0ab1f6f1d829"),
+                            new Guid("6c0052d4-f68c-41fa-9760-b7cc64174ed2"),
+                            new Guid("d4e160f5-7c81-4746-8e4f-26b917e644ad"),
+                            new Guid("22ca2295-6b29-4aef-a857-1e573d215e61")
+                        }
+                    });
+                    await context.AddBatchAsync(new Library.Models.Batch()
+                    {
+                        BatchId = Guid.NewGuid(),
+                        BatchName = "1890-feb25-sdet",
+                        BatchOccupancy = 12,
+                        BatchSkill = "SDET",
+                        StartDate = new DateTime(2017, 2, 25),
+                        EndDate = new DateTime(2017, 5, 10),
+                        State = "FL",
+                        UserIds = new List<Guid>
+                        {
+                            new Guid("a48ad51e-7e0d-4d9d-bf1f-f4ec659b2d09"),
+                            new Guid("c7cae577-3860-4ac5-b775-4ac446e69807"),
+                            new Guid("67c7d90a-5114-459f-903c-7bd5a376fe20"),
+                            new Guid("2473d113-dba5-4f1f-b059-de5f13c93f09"),
+                            new Guid("fe07a3af-c69b-4d5e-ad25-e33285c07957"),
+                            new Guid("2dff4f9d-5e4a-4d47-b0ac-8684d575a76e"),
+                            new Guid("5de4d23f-bad3-41ce-8836-f900db95d7a7"),
+                            new Guid("3d0ce10a-5807-459a-9936-c1e30dd73f05"),
+                            new Guid("7e2435e3-b36d-4a75-8a40-94c09e811a3d"),
+                            new Guid("8a84a471-d0f0-4556-b49c-dd2fc1f9bdbe"),
+                            new Guid("f6b3c4ca-9426-41b1-a9ba-69f64a09708d"),
+                            new Guid("b8e7b501-b7d6-45e5-89ef-7bb9280d934f")
                         }
                     });
                 }

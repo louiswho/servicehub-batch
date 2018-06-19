@@ -48,7 +48,7 @@ namespace ServiceHub.Batch.Testing.Service
                 BatchId = Guid.NewGuid(),
                 BatchName = "1703-dec09-java",
                 BatchOccupancy = 17,
-                BatchSkill = "Test2",
+                BatchSkill = "TEST2",
                 StartDate = new DateTime(2017, 12, 9),
                 EndDate = new DateTime(2018, 2, 23),
                 State = "AK",
@@ -62,7 +62,7 @@ namespace ServiceHub.Batch.Testing.Service
                 BatchId = Guid.NewGuid(),
                 BatchName = "1804-apr09-net",
                 BatchOccupancy = 21,
-                BatchSkill = "Test1",
+                BatchSkill = "TEST1",
                 StartDate = new DateTime(2018, 4, 9),
                 EndDate = new DateTime(2018, 6, 22),
                 State = "HI",
@@ -76,7 +76,7 @@ namespace ServiceHub.Batch.Testing.Service
                 BatchId = Guid.NewGuid(),
                 BatchName = "1803-mar26-dynamics",
                 BatchOccupancy = 22,
-                BatchSkill = "Test2",
+                BatchSkill = "TEST2",
                 StartDate = new DateTime(2018, 3, 26),
                 EndDate = new DateTime(2018, 6, 4),
                 State = "AK",
@@ -106,8 +106,8 @@ namespace ServiceHub.Batch.Testing.Service
         /// </summary>
         public static readonly ImmutableList<object[]> SkillTestCases = ImmutableList.Create
         (
-            new object[] { "Test1", 1 },
-            new object[] { "Test2", 2 }
+            new object[] { "TEST1", 1 },
+            new object[] { "TEST2", 2 }
         );
         /// <summary>
         /// Compare expected return with actual return from GetBySkill(string skill)
@@ -122,7 +122,7 @@ namespace ServiceHub.Batch.Testing.Service
             var result = res.Value;
             List<Batch.Library.Models.Batch> testC = (List<Batch.Library.Models.Batch>)result;
 
-            Assert.Equal(num, testC.FindAll(x => x.BatchSkill == skill).Count);
+            Assert.Equal(num, testC.FindAll(x => x.BatchSkill.ToUpper() == skill).Count);
         }
 
         /// <summary>
