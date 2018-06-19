@@ -39,6 +39,7 @@ namespace ServiceHub.Batch.Service
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory)
         {
+            const string swaggerEndpoint = "/swagger/v1/swagger.json";
             loggerFactory.AddApplicationInsights(app.ApplicationServices);
             ApplicationLogging.ConfigureLogger("service");
             ApplicationLogging.LoggerFactory = loggerFactory;
@@ -51,7 +52,7 @@ namespace ServiceHub.Batch.Service
             app.UseSwagger();
             app.UseSwaggerUI(c =>
             {
-                c.SwaggerEndpoint("/swagger/v1/swagger.json", "Revature Housing ServiceHub Batch API");
+                c.SwaggerEndpoint(swaggerEndpoint, "Revature Housing ServiceHub Batch API");
             });
         }
     }
