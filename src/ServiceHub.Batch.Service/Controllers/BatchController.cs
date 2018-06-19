@@ -57,7 +57,7 @@ namespace ServiceHub.Batch.Service.Controllers
         {
             try
             {
-                List<Library.Models.Batch> result = await storage.GetBatchesBySkillAsync(skill);
+                List<Library.Models.Batch> result = await storage.GetBatchesBySkillAsync(skill.ToUpper());
                 return Ok(result);
             }
             catch (Exception e)
@@ -80,7 +80,7 @@ namespace ServiceHub.Batch.Service.Controllers
         {
             try
             {
-                List<Library.Models.Batch> result = await storage.GetBatchesByLocationAsync(state);
+                List<Library.Models.Batch> result = await storage.GetBatchesByLocationAsync(state.ToUpper());
                 return Ok(result);
             }
             catch (Exception e)
